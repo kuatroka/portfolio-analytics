@@ -1,0 +1,97 @@
+{
+  "tadFileFormatVersion": 2,
+  "contents": {
+    "dsPath": {
+      "sourceId": {
+        "providerName": "localfs",
+        "resourceId": "/Users/yo_macbook/Documents/app_data/TR_04_CONS_CIK_TICKER/2230-TICKER-2023-08-01.parquet"
+      },
+      "path": [
+        "."
+      ]
+    },
+    "viewParams": {
+      "showRoot": false,
+      "displayColumns": [
+        "cusip_ticker",
+        "tr_id",
+        "rdate",
+        "tr_type",
+        "value",
+        "shares",
+        "sec_price",
+        "tr_shares",
+        "tr_value"
+      ],
+      "vpivots": [],
+      "pivotLeafColumn": null,
+      "sortKey": [
+        [
+          "rdate",
+          true
+        ]
+      ],
+      "openPaths": {
+        "_rep": {}
+      },
+      "aggMap": {},
+      "defaultFormats": {
+        "string": {
+          "type": "TextFormatOptions",
+          "urlsAsHyperlinks": true
+        },
+        "integer": {
+          "type": "NumFormatOptions",
+          "commas": true,
+          "decimalPlaces": 0,
+          "exponential": false
+        },
+        "real": {
+          "type": "NumFormatOptions",
+          "commas": true,
+          "decimalPlaces": 0,
+          "exponential": false
+        },
+        "boolean": {
+          "type": "NumFormatOptions",
+          "commas": true,
+          "decimalPlaces": 0,
+          "exponential": false
+        }
+      },
+      "columnFormats": {
+        "tr_value": {
+          "type": "NumFormatOptions",
+          "commas": false,
+          "decimalPlaces": 0,
+          "exponential": false
+        },
+        "value": {
+          "type": "NumFormatOptions",
+          "commas": true,
+          "decimalPlaces": 2,
+          "exponential": false
+        }
+      },
+      "showHiddenCols": false,
+      "filterExp": {
+        "expType": "FilterExp",
+        "op": "AND",
+        "opArgs": [
+          {
+            "expType": "BinRelExp",
+            "op": "EQ",
+            "lhs": {
+              "expType": "ColRef",
+              "colName": "cusip_ticker"
+            },
+            "rhs": {
+              "expType": "ConstVal",
+              "val": "ACN"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

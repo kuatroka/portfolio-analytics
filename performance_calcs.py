@@ -35,7 +35,7 @@ def average_price(cash_flows, shares, date=None):
     # cost base is reduced but the number of shares is unchanged, the average price will be 
     # adjusted downwards
     avg_price = (cash_flows[cash_flows != 0][shares >= 0].cumsum() 
-                 / shares[shares >= 0].cumsum()).ffill()
+                / shares[shares >= 0].cumsum()).ffill()
     
     return avg_price
 
@@ -341,10 +341,10 @@ def time_weighted_return_annualised(val, cash_flows, date=None, use_initial_CF=F
     # num_years. Set num_years to 1 if (val==0).all() to avoid divide by zero error
     # Assume 261 business days in a calender year
     num_years = val.apply(lambda x: (pd.Series(x.loc[x.ne(0).idxmax():].reset_index().index.values, 
-                                                   index=x.loc[x.ne(0).idxmax():].index) / 261) 
-                              if not (x == 0).all() 
-                              else pd.Series(1, index=x.index)) 
-       
+                                                index=x.loc[x.ne(0).idxmax():].index) / 261) 
+                            if not (x == 0).all() 
+                            else pd.Series(1, index=x.index)) 
+
     MDR_ann = np.power(time_weighted_return(val, cash_flows) + 1, 1 / num_years) - 1
         
     return MDR_ann
